@@ -1,0 +1,256 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CloudAccess | Bienvenida</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Inter, "Segoe UI", Arial, sans-serif;
+            background:
+                radial-gradient(
+                    circle at 10% 20%,
+                    #123342,
+                    transparent 40%
+                ),
+                radial-gradient(
+                    circle at 90% 90%,
+                    #182d57,
+                    transparent 40%
+                ),
+                #080e1b;
+            color: #f1f5f9;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 22px 7%;
+            border-bottom: 1px solid #263649;
+            background: rgba(16,27,43,.65);
+        }
+
+        .logo {
+            font-size: 21px;
+            font-weight: 800;
+            letter-spacing: -.5px;
+        }
+
+        .logo span {
+            color: #56e7cf;
+        }
+
+        .logout {
+            text-decoration: none;
+            background: #1c2b3e;
+            color: #f1f5f9;
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 600;
+            border: 1px solid #34455a;
+            transition: .2s;
+        }
+
+        .logout:hover {
+            background: #33475f;
+        }
+
+        .main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 100px 24px;
+        }
+
+        .badge {
+            display: inline-block;
+            color: #56e7cf;
+            background: rgba(86,231,207,.08);
+            border: 1px solid rgba(86,231,207,.2);
+            border-radius: 30px;
+            padding: 10px 16px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        h1 {
+            font-size: clamp(35px, 6vw, 62px);
+            letter-spacing: -2px;
+            line-height: 1.1;
+            margin: 30px 0 20px;
+        }
+
+        h1 span {
+            color: #56e7cf;
+        }
+
+        .description {
+            color: #9fb0c6;
+            font-size: 17px;
+            line-height: 1.8;
+            max-width: 650px;
+        }
+
+        .panel {
+            margin-top: 50px;
+            background: #101b2b;
+            border: 1px solid #29394e;
+            border-radius: 20px;
+            padding: 35px;
+        }
+
+        .panel h2 {
+            margin-top: 0;
+            font-size: 23px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-top: 25px;
+        }
+
+        .card {
+            background: #0b1524;
+            border: 1px solid #263649;
+            border-radius: 14px;
+            padding: 24px;
+        }
+
+        .card-icon {
+            font-size: 30px;
+            margin-bottom: 16px;
+        }
+
+        .card h3 {
+            font-size: 16px;
+            margin: 0 0 10px;
+        }
+
+        .card p {
+            color: #94a3b8;
+            font-size: 13px;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 70px;
+            color: #71849b;
+            font-size: 12px;
+        }
+
+        @media (max-width: 700px) {
+            .navbar {
+                padding: 20px;
+            }
+
+            .main {
+                padding: 65px 20px;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .panel {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            ☁ Cloud<span>Access</span>
+        </div>
+
+        <a href="/salir" class="logout">
+            Cerrar sesión
+        </a>
+    </nav>
+
+    <main class="main">
+
+        <div class="badge">
+            ✓ ACCESO AUTORIZADO
+        </div>
+
+        <h1>
+            ¡Bienvenido,<br>
+            <span>{{ nombre }}!</span>
+        </h1>
+
+        <p class="description">
+            Has iniciado sesión correctamente
+            en CloudAccess. Tu identidad ha sido
+            verificada mediante nuestra aplicación
+            y la base de datos PostgreSQL.
+        </p>
+
+        <section class="panel">
+
+            <h2>Panel de bienvenida</h2>
+
+            <p class="description">
+                Esta plataforma demuestra el
+                funcionamiento de una aplicación
+                web con autenticación, servicios
+                en contenedores y almacenamiento
+                persistente.
+            </p>
+
+            <div class="grid">
+
+                <div class="card">
+                    <div class="card-icon">🔐</div>
+                    <h3>Autenticación</h3>
+                    <p>
+                        Acceso mediante credenciales
+                        verificadas contra PostgreSQL.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">🐳</div>
+                    <h3>Contenedores</h3>
+                    <p>
+                        Arquitectura diseñada para
+                        Docker y Docker Compose.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">☁️</div>
+                    <h3>Cloud Computing</h3>
+                    <p>
+                        Aplicación preparada para
+                        su despliegue en la nube.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="footer">
+            CloudAccess · Proyecto académico
+            de Cloud Computing
+        </div>
+
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,8 @@
+CREATE EXTENSION IF NOT EXISTS pgcrypto;
+
+CREATE TABLE IF NOT EXISTS usuarios (
+    id BIGSERIAL PRIMARY KEY,
+    usuario VARCHAR(60) UNIQUE NOT NULL,
+    password_hash TEXT NOT NULL,
+    nombre VARCHAR(120) NOT NULL
+);
